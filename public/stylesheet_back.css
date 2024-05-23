@@ -1,0 +1,9 @@
+/* Hide the SVG */
+svg {
+  display: none;
+}
+
+/* Hide the paragraph with class 'MuiTypography-root' that contains "Built with" */
+.MuiTypography-root.MuiTypography-body1 {
+  display: none;
+}

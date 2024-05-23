@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "eqt-chat-v2"
+version = "0.1.0"
+description = ""
+authors = ["andresucv96 <andresucv96@gmail.com>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+langchain = "0.1.11"
+langchain-openai = "0.0.8"
+langchain-community = "0.0.27"
+python-dotenv = "1.0.1"
+chainlit = "1.0.400"
+pinecone-client = "3.0.0"
+langchain-pinecone = "0.0.3"
+poethepoet = "^0.25.0"
+pinecone-text = "^0.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+test = "chainlit run app.py -w"
