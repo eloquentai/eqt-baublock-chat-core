@@ -20,7 +20,7 @@ from pinecone_text.sparse import BM25Encoder
 def init_vectorstore():
     # initialize the vector store object
     pc = pine(api_key=os.getenv('PINECONE_API_KEY'))
-    index = pc.Index(os.getenv('PINECONE_INDEX'))
+    index = pc.Index(os.getenv('PINECONE_INDEX_BAUBLOCK'))
 
     bm25_encoder = BM25Encoder().default()
     embed_model = OpenAIEmbeddings(
@@ -29,7 +29,7 @@ def init_vectorstore():
                 )
 
     vectorstore = PineconeHybridSearchRetriever(
-        embeddings=embed_model, sparse_encoder=bm25_encoder, index=index, alpha=1, top_k=3
+        embeddings=embed_model, sparse_encoder=bm25_encoder, index=index, alpha=1, top_k=5
     )
 
     return vectorstore
